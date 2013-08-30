@@ -28,10 +28,6 @@
 {
     [super viewDidLoad];
     
-    BlogPost *blogPost = [[BlogPost alloc] init];
-    blogPost.title = @"some title";
-    blogPost.author = @"some author";
-    
     NSURL *blogURL = [NSURL URLWithString:@"http://blog.teamtreehouse.com/api/get_recent_summary/"];
     
     NSData *blogData = [NSData dataWithContentsOfURL:blogURL];
@@ -40,10 +36,15 @@
     
     NSDictionary *blogDictionary = [NSJSONSerialization JSONObjectWithData:blogData options:0 error:&error];
     
-    NSLog(@"%@",blogDictionary);
+    self.blogPosts = [NSMutableArray array];
     
-
-    self.blogPosts = [blogDictionary objectForKey:@"posts"];
+    NSArray *blogPostArray = [blogDictionary objectForKey:@"posts"];
+    
+    for (NSDictionary *blogDictionary in blogPostArray) {
+        BlogPost *blogPost = [BlogPost blogPostWithTitle:[blogDictionary objectForKey:@"title"]];
+        blogPost.author = [blogDictionary objectForKey:@"author"];
+        [self.blogPosts addObject:blogPost];
+    }
     
 }
 
@@ -70,9 +71,9 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    NSDictionary *blogPost = [self.blogPosts objectAtIndex:indexPath.row];
-    cell.textLabel.text = [blogPost valueForKey:@"title"];
-    cell.detailTextLabel.text = [blogPost valueForKey:@"author"];
+    BlogPost *blogPost = [self.blogPosts objectAtIndex:indexPath.row];
+    cell.textLabel.text = blogPost.title;
+    cell.detailTextLabel.text = blogPost.author;
     
     return cell;
 }

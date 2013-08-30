@@ -10,5 +10,18 @@
 
 @implementation BlogPost
 
+// Designated Initializer
+- (id) initWithTitle:(NSString *)title{
+    self = [super init];
+    if(self){
+        self.title = title;
+    }
+    return self;
+}
+
+// Conventience Constructor
++ (id) blogPostWithTitle:(NSString *)title{
+    return [[self alloc] initWithTitle:title];
+}
 
 @end
