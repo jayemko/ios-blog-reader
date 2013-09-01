@@ -44,6 +44,7 @@
         BlogPost *blogPost = [BlogPost blogPostWithTitle:[blogDictionary objectForKey:@"title"]];
         blogPost.author = [blogDictionary objectForKey:@"author"];
         blogPost.thumbnail = [blogDictionary objectForKey:@"thumbnail"];
+        blogPost.date = [blogDictionary objectForKey:@"date"];
         [self.blogPosts addObject:blogPost];
     }
     
@@ -85,7 +86,7 @@
         cell.imageView.image = [UIImage imageNamed:@"treehouse.png"];
     }
     cell.textLabel.text = blogPost.title;
-    cell.detailTextLabel.text = blogPost.author;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Author: %@ - %@", blogPost.author, [blogPost formattedDate]];
     
     return cell;
 }
