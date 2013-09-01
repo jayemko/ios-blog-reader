@@ -42,9 +42,12 @@
     
     for (NSDictionary *blogDictionary in blogPostArray) {
         BlogPost *blogPost = [BlogPost blogPostWithTitle:[blogDictionary objectForKey:@"title"]];
+        
         blogPost.author = [blogDictionary objectForKey:@"author"];
         blogPost.thumbnail = [blogDictionary objectForKey:@"thumbnail"];
         blogPost.date = [blogDictionary objectForKey:@"date"];
+        blogPost.url = [NSURL URLWithString:[blogDictionary objectForKey:@"url"]];
+        
         [self.blogPosts addObject:blogPost];
     }
     
@@ -78,9 +81,9 @@
     if([blogPost.thumbnail isKindOfClass:[NSString class]]){
         
         NSData *imageData = [NSData dataWithContentsOfURL:blogPost.thumbnailURL];
-    
+        
         UIImage *image = [UIImage imageWithData:imageData];
-    
+        
         cell.imageView.image = image;
     }else{
         cell.imageView.image = [UIImage imageNamed:@"treehouse.png"];
@@ -95,7 +98,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    // get row index and open url in default browser
+    BlogPost *blogPost = [self.blogPosts objectAtIndex:indexPath.row];
+    UIApplication *application = [UIApplication sharedApplication];
+    [application openURL:blogPost.url];
+    
+    NSLog(@"Row selected: %d", indexPath.row);
+    
 }
 
 @end
