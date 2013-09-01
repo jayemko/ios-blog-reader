@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C931D8517D16164008BF5AB /* treehouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C931D8417D16164008BF5AB /* treehouse.png */; };
 		3CED3F4517CC124F006B945F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CED3F4417CC124F006B945F /* UIKit.framework */; };
 		3CED3F4717CC124F006B945F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CED3F4617CC124F006B945F /* Foundation.framework */; };
 		3CED3F4917CC124F006B945F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CED3F4817CC124F006B945F /* CoreGraphics.framework */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C931D8417D16164008BF5AB /* treehouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = treehouse.png; sourceTree = "<group>"; };
 		3CED3F4117CC124F006B945F /* BlogReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CED3F4417CC124F006B945F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3CED3F4617CC124F006B945F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -101,6 +103,7 @@
 		3CED3F4B17CC124F006B945F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C931D8417D16164008BF5AB /* treehouse.png */,
 				3CED3F4C17CC124F006B945F /* BlogReader-Info.plist */,
 				3CED3F4D17CC124F006B945F /* InfoPlist.strings */,
 				3CED3F5017CC124F006B945F /* main.m */,
@@ -168,6 +171,7 @@
 				3CED3F5917CC124F006B945F /* Default@2x.png in Resources */,
 				3CED3F5B17CC124F006B945F /* Default-568h@2x.png in Resources */,
 				3CED3F6217CC12A0006B945F /* MainStoryboard.storyboard in Resources */,
+				3C931D8517D16164008BF5AB /* treehouse.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

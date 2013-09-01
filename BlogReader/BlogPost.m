@@ -15,6 +15,8 @@
     self = [super init];
     if(self){
         self.title = title;
+        self.thumbnail = nil;
+        self.author = nil;
     }
     return self;
 }
@@ -22,6 +24,10 @@
 // Conventience Constructor
 + (id) blogPostWithTitle:(NSString *)title{
     return [[self alloc] initWithTitle:title];
+}
+
+- (NSURL *) thumbnailURL{
+    return [NSURL URLWithString:self.thumbnail];
 }
 
 @end
