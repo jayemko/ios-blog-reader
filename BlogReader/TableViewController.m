@@ -8,6 +8,7 @@
 
 #import "TableViewController.h"
 #import "BlogPost.h"
+#import "WebViewController.h"
 
 @interface TableViewController ()
 
@@ -94,17 +95,26 @@
     return cell;
 }
 
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // get row index and open url in default browser
-    BlogPost *blogPost = [self.blogPosts objectAtIndex:indexPath.row];
-    UIApplication *application = [UIApplication sharedApplication];
-    [application openURL:blogPost.url];
-    
-    NSLog(@"Row selected: %d", indexPath.row);
-    
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    NSLog(@"preparing for segue: %@", segue.identifier);
+    if([segue.identifier isEqualToString:@"showBlogPost"]){
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        BlogPost *blogPost = [self.blogPosts objectAtIndex:indexPath.row];
+        
+        [segue.destinationViewController setBlogPostsURL:blogPost.url];
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 @end

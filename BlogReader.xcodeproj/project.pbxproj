@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C6394D017D32004006C1368 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6394CF17D32004006C1368 /* WebViewController.m */; };
 		3C931D8517D16164008BF5AB /* treehouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C931D8417D16164008BF5AB /* treehouse.png */; };
 		3CED3F4517CC124F006B945F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CED3F4417CC124F006B945F /* UIKit.framework */; };
 		3CED3F4717CC124F006B945F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CED3F4617CC124F006B945F /* Foundation.framework */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C6394CE17D32004006C1368 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		3C6394CF17D32004006C1368 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		3C931D8417D16164008BF5AB /* treehouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = treehouse.png; sourceTree = "<group>"; };
 		3CED3F4117CC124F006B945F /* BlogReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CED3F4417CC124F006B945F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -96,6 +99,8 @@
 				3CED3F6417CC1828006B945F /* TableViewController.m */,
 				3CF9C14417D00B4E009F817C /* BlogPost.h */,
 				3CF9C14517D00B4E009F817C /* BlogPost.m */,
+				3C6394CE17D32004006C1368 /* WebViewController.h */,
+				3C6394CF17D32004006C1368 /* WebViewController.m */,
 			);
 			path = BlogReader;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				3CED3F5517CC124F006B945F /* AppDelegate.m in Sources */,
 				3CED3F6517CC1828006B945F /* TableViewController.m in Sources */,
 				3CF9C14617D00B4E009F817C /* BlogPost.m in Sources */,
+				3C6394D017D32004006C1368 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
